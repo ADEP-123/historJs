@@ -21,6 +21,7 @@ body{
 
 /*--- zona conteo regresivo--- */
 .flip-card{
+    position: relative;
     display: inline-flex;
     flex-direction: column;
     font-size: 8rem;
@@ -28,7 +29,11 @@ body{
     border-radius: .1em;
 }
 
-.top,.bottom{
+.top,
+.bottom,
+/* animacion conteo */
+.flip-card.flip::before,
+.flip-card.flip::after{
     background-color: var(--gray);
     color: var(--blue2);
     height: .75em;
@@ -36,15 +41,52 @@ body{
     padding: .25em;
     overflow: hidden; 
 }
-.top{
+.top,
+/* animacion conteo */
+.flip-card.flip::before{
     border-top-left-radius: .1em;
     border-top-right-radius: .1em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.bottom{
+.bottom,
+/* animacion conteo */
+.flip-card.flip::after{
     display: flex;
     align-items: flex-end;
     border-bottom-left-radius: .1em;
     border-bottom-right-radius: .1em;
+}
+
+/* animacion conteo */
+.flip-card.flip::before{
+    content: "4";
+    position: absolute;
+    width: 100%;
+    background-color: red;
+    animation: flip-top 250ms ease-in;
+    transform-origin: bottom;
+}
+
+@keyframes flip-top{
+    100%{
+        transform: rotateX(90deg);
+    }
+}
+
+.flip-card.flip::after{
+    content: "4";
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    background-color: red;
+    animation: flip-bottom 250ms ease-out 250ms;
+    transform-origin: top;
+    transform: rotateX(90deg);
+}
+
+@keyframes flip-bottom{
+    100%{
+        transform: rotateX(0deg);
+    }
 }
