@@ -10,6 +10,25 @@
 
 <body>
     <div id="container">
+        <!-- div de inicio -->
+        <div id="divInicio">
+            <div id="lab1">
+                <input type="number" id="mins" class="inpMin" placeholder="MM" max="60">
+                <p class="puntDiv">:</p>
+                <input type="number" id="secs" class="inpSecs" placeholder="SS" max="60">
+            </div>
+            <div id="lab2">
+                <p>Porfavor ingrese el tiempo en el que iniciara el contador en formato MM:SS</p>
+                <button id="start">Ingresar</button>
+            </div>
+        </div>
+
+        <!-- div transicion -->
+        <div id="transitionContainer" class="transition-container">
+            <img src="./images/loadingBot.gif" alt="Transición">
+        </div>
+
+        <!-- div del conteo -->
         <div id="zonaConteo">
             <div class="flip-card">
                 <div class="flipUnit top" id="min1t">0</div>
