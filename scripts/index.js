@@ -10,13 +10,6 @@ function flip() {
 
     if (min >= 0 && sec >= 0) {
 
-        if (sec == 0) {
-            min--;
-            sec = 59;
-        } else {
-            sec--;
-        }
-
         const newMin = min.toString().padStart(2, '0');
         const newSec = sec.toString().padStart(2, '0');
 
@@ -55,6 +48,12 @@ function flip() {
         if (min1b.textContent !== newMin[0]) {
             flipDigit(min1b, newMin[0]);
         }
+        if (sec == 0) {
+            min--;
+            sec = 59;
+        } else {
+            sec--;
+        }
 
     } else {
         alert("¡Llegamos al final!");
@@ -63,21 +62,33 @@ function flip() {
 
 
 function flipDigit(element, newValue) {
-    const card = element.cloneNode(true)
+    let startValue = element.textContent
 
-    if (card.classList.contains("top")) {
+    const card = document.createElement("div");
+    if (element.classList.contains("top")) {
         card.classList.add("flipedTop");
-        element.insertAdjacentElement("afterend", card);
-        // element.classList.add("flipedTop");
     } else {
         card.classList.add("flipedBottom");
-        element.insertAdjacentElement("afterend", card);
-        // element.classList.add("flipedBottom");
     }
-    element.textContent = newValue;
-    setTimeout(() => {
-        card.textContent = newValue;
-        card.parentNode.removeChild(card);
-    }, 500)
 
+    if (element.classList.contains("top")) {
+        card.textContent = startValue;
+    } else {
+        card.textContent = newValue
+    }
+
+    if (element.classList.contains("top")) {
+        card.addEventListener("animationstart", e => {
+            element.textContent = newValue;
+        })
+        card.addEventListener("animationend", e => {
+            card.remove();
+        })
+    } else {
+        card.addEventListener("animationend", e => {
+            element.textContent = newValue
+            card.remove()
+        })
+    }
+    element.parentNode.append(card)
 }
