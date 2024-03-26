@@ -1,6 +1,7 @@
 :root {
     --white: #ffffff;
     --gray:#5c616b;
+    --gray2:#757880;
     --black:#1e2025;
     --red:#bb0000;
     --blue1:#daf6ff;
@@ -29,14 +30,19 @@ body{
     justify-content: center;
     align-items: center;
 }
+.puntDiv{
+    font-size: 8rem;
+    color: var(--blue2);
+}
 /*--- zona conteo regresivo--- */
 .flip-card{
     position: relative;
     display: inline-flex;
     flex-direction: column;
     font-size: 8rem;
-    box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.2);
-    border-radius: .1em;
+    box-shadow: 0px 2px 3px 0px var(--gray2);
+    border-radius: 5%;
+    margin-right: 1%;
 }
 .top, .bottom {
     background-color: var(--gray);
@@ -45,9 +51,12 @@ body{
     line-height: 1;
     padding: .25em;
     overflow: hidden; 
-    border-radius: .1em;
+    border-radius: 5%;
     position: relative;
     width: 100%;
+}
+.top{
+    border-bottom: 1px solid var(--gray2);
 }
 .bottom{
     display: flex;
@@ -58,11 +67,11 @@ body{
     position: absolute;
     width: 100%;
     animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
 }
 
 .flipedTop {
     transform-origin: bottom;
+    animation-timing-function: ease-in;
 }
 .flipedBottom {
     bottom: 0;
@@ -70,15 +79,13 @@ body{
     display: flex;
     align-items: self-end;
     animation-delay: 0.5s;
+    animation-timing-function: ease-out;
+    
 }
 @keyframes flip-top {
-    0% { transform: rotateX(0deg); }
-    50% { transform: rotateX(90deg); }
     100% { transform: rotateX(90deg); }
 }
 @keyframes flip-bottom {
-    0% { transform: rotateX(90deg); }
-    50% { transform: rotateX(0deg); }
     100% { transform: rotateX(0deg); }
 }
 .flipedTop {
