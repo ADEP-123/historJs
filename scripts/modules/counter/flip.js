@@ -1,7 +1,14 @@
 import variables from "../../variables.js";
 import flipDigit from "./flipDigit.js";
 function flip() {
-    if (variables.minLeft > 0 || variables.secLeft > -1) {
+    console.log(variables.secLeft);
+    if (variables.minLeft > 0 || variables.secLeft > 0) {
+        if (variables.secLeft == 0) {
+            variables.minLeft--;
+            variables.secLeft = 59;
+        } else {
+            variables.secLeft--;
+        }
 
         const newMin = variables.minLeft.toString().padStart(2, '0');
         const newSec = variables.secLeft.toString().padStart(2, '0');
@@ -31,12 +38,7 @@ function flip() {
         if (variables.min1b.textContent !== newMin[0]) {
             flipDigit(variables.min1b, newMin[0]);
         }
-        if (variables.secLeft == 0) {
-            variables.minLeft--;
-            variables.secLeft = 59;
-        } else {
-            variables.secLeft--;
-        }
+
 
     } else {
         alert("¡Llegamos al final!");

@@ -92,13 +92,22 @@ body{
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: fadeIn 1s forwards; /* Agrega una animación de desvanecimiento */
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    
+    to {
+        opacity: 1;
+    }
 }
 
 /*--Zona conteo--*/
 #zonaConteo{
     width: 100%;
-    /* display: flex; */
     display: none;
     justify-content: center;
     align-items: center;
