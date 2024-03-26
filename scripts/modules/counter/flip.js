@@ -1,7 +1,6 @@
 import variables from "../../variables.js";
 import flipDigit from "./flipDigit.js";
 function flip() {
-    console.log(variables.secLeft);
     if (variables.minLeft > 0 || variables.secLeft > 0) {
         if (variables.secLeft == 0) {
             variables.minLeft--;
