@@ -1,7 +1,7 @@
 import variables from "../../variables.js";
 import flipDigit from "./flipDigit.js";
 function flip() {
-    if (variables.minLeft >= 0 && variables.secLeft >= 0) {
+    if (variables.minLeft > 0 || variables.secLeft > -1) {
 
         const newMin = variables.minLeft.toString().padStart(2, '0');
         const newSec = variables.secLeft.toString().padStart(2, '0');

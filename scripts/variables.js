@@ -6,5 +6,5 @@ class Variables {
         this.secLeft = secLeft;
     }
 }
-const variables = new Variables(document.querySelectorAll(".flip-card"), document.querySelectorAll(".flipUnit"), 10, 59);
+const variables = new Variables(document.querySelectorAll(".flip-card"), document.querySelectorAll(".flipUnit"), 0, 10);
 export default variables
