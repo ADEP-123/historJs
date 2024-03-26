@@ -1,4 +1,5 @@
 import variables from "../../variables.js";
+import reproducirAudCohe from "./reproducitAudCohe.js";
 import switchToHistory from "./switchToHistory.js";
 
 const insertarCohete = () => {
@@ -8,6 +9,7 @@ const insertarCohete = () => {
     imageCohete.src = "images/coete.png"
     setTimeout(() => {
         imageCohete.src = "images/coete.gif"
+        reproducirAudCohe()
     }, 2000);
     setTimeout(() => {
         switchToHistory()

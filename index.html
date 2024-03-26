@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style/styles.css">
     <!-- libreria para la historia js -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title>Cuenta regresiva</title>
 </head>
 
 <body>
@@ -32,6 +34,7 @@
 
         <!-- div del conteo -->
         <div id="zonaConteo">
+            <audio id="beep" src="sounds/beep.mp3" preload="auto"></audio>
             <div class="flip-card">
                 <div class="flipUnit top" id="min1t">0</div>
                 <div class="flipUnit bottom" id="min1b">0</div>
@@ -53,6 +56,7 @@
 
         <!-- Div transicion Cohete -->
         <div id="transCoh" class="transition-container">
+            <audio id="audDespegue" src="sounds/despegue.mp3" preload="auto"></audio>
             <img src="" id="cohete">
         </div>
 

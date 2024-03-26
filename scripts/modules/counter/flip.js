@@ -1,6 +1,7 @@
 import variables from "../../variables.js";
 import insertarCohete from "../transCohete/insertarCohete.js";
 import flipDigit from "./flipDigit.js";
+import reproducirBeep from "./reprodBeep.js";
 
 function flip() {
     if (variables.minLeft > 0 || variables.secLeft > 0) {
@@ -10,7 +11,7 @@ function flip() {
         } else {
             variables.secLeft--;
         }
-
+        reproducirBeep();
         const newMin = variables.minLeft.toString().padStart(2, '0');
         const newSec = variables.secLeft.toString().padStart(2, '0');
 
