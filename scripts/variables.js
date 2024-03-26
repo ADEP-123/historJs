@@ -1,11 +1,13 @@
 class Variables {
-    constructor(flipCards, flipUnits, startButton, divInicio, transContaniner, zonaConteo) {
+    constructor(flipCards, flipUnits, startButton, divInicio, transContaniner, zonaConteo, transCohete, zonaHistoria) {
         this.flipCards = flipCards;
         this.flipUnits = flipUnits;
         this.startButton = startButton;
         this.divInicio = divInicio;
         this.transContaniner = transContaniner;
         this.zonaConteo = zonaConteo;
+        this.transCohete = transCohete;
+        this.zonaHistoria = zonaHistoria;
         this.minUser = 0;
         this.secUser = 0;
         this.minLeft = 0;
@@ -50,6 +52,8 @@ const variables = new Variables(
     document.querySelector("#start"),
     document.querySelector("#divInicio"),
     document.querySelector("#transitionContainer"),
-    document.querySelector("#zonaConteo"));
+    document.querySelector("#zonaConteo"),
+    document.querySelector("#transCoh"),
+    document.querySelector("#historiaJs"));
 variables.setUsarSpaces()
 export default variables

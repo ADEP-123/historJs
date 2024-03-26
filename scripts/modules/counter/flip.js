@@ -1,5 +1,7 @@
 import variables from "../../variables.js";
+import insertarCohete from "../transCohete/insertarCohete.js";
 import flipDigit from "./flipDigit.js";
+
 function flip() {
     if (variables.minLeft > 0 || variables.secLeft > 0) {
         if (variables.secLeft == 0) {
@@ -38,9 +40,8 @@ function flip() {
             flipDigit(variables.min1b, newMin[0]);
         }
 
-
     } else {
-        alert("¡Llegamos al final!");
+        insertarCohete()
     }
 }
 export default flip;
