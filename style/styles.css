@@ -42,7 +42,7 @@ body{
     font-size: 8rem;
     box-shadow: 0px 2px 3px 0px var(--gray2);
     border-radius: 5%;
-    margin-right: 1%;
+    margin: 0.5%;
 }
 .top, .bottom ,.flipedBottom,.flipedTop{
     background-color: var(--gray);
