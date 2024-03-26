@@ -13,12 +13,22 @@
     box-sizing: border-box;
     font-family: 'IBM Plex Mono', monospace;
 }
-
 /* ---Body--- */
 body{
     background-color: var(--black);
 }
-
+#container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+/*--Zona conteo*/
+#zonaConteo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*--- zona conteo regresivo--- */
 .flip-card{
     position: relative;
@@ -28,65 +38,52 @@ body{
     box-shadow: 0px 2px 3px 0px rgba(255, 255, 255, 0.2);
     border-radius: .1em;
 }
-
-.top,
-.bottom,
-/* animacion conteo */
-.flip-card.flip::before,
-.flip-card.flip::after{
+.top, .bottom {
     background-color: var(--gray);
     color: var(--blue2);
     height: .75em;
     line-height: 1;
     padding: .25em;
     overflow: hidden; 
+    border-radius: .1em;
+    position: relative;
+    width: 100%;
 }
-.top,
-/* animacion conteo */
-.flip-card.flip::before{
-    border-top-left-radius: .1em;
-    border-top-right-radius: .1em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.bottom,
-/* animacion conteo */
-.flip-card.flip::after{
+.bottom{
     display: flex;
-    align-items: flex-end;
-    border-bottom-left-radius: .1em;
-    border-bottom-right-radius: .1em;
+    align-items: self-end;
 }
 
-/* animacion conteo */
-.flip-card.flip::before{
-    content: "4";
+.flipedTop, .flipedBottom{
     position: absolute;
     width: 100%;
-    background-color: red;
-    animation: flip-top 250ms ease-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.flipedTop {
     transform-origin: bottom;
 }
-
-@keyframes flip-top{
-    100%{
-        transform: rotateX(90deg);
-    }
-}
-
-.flip-card.flip::after{
-    content: "4";
+.flipedBottom {
     bottom: 0;
-    position: absolute;
-    width: 100%;
-    background-color: red;
-    animation: flip-bottom 250ms ease-out 250ms;
     transform-origin: top;
-    transform: rotateX(90deg);
+    display: flex;
+    align-items: self-end;
+    animation-delay: 0.5s;
 }
-
-@keyframes flip-bottom{
-    100%{
-        transform: rotateX(0deg);
-    }
+@keyframes flip-top {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(90deg); }
+}
+@keyframes flip-bottom {
+    0% { transform: rotateX(90deg); }
+    50% { transform: rotateX(0deg); }
+    100% { transform: rotateX(0deg); }
+}
+.flipedTop {
+    animation-name: flip-top;
+}
+.flipedBottom{
+    animation-name: flip-bottom;
 }
